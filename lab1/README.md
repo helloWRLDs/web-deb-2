@@ -1,5 +1,5 @@
-# chatJs
- chat using socket.io
+# Lab 1 - Build a Real-Time Chat Application
+ Chat using socket.io
 
 ## Installation
 ```bash

@@ -1,4 +1,4 @@
-# CHAT APP
+# Assignment 1 - Login and Registration
 
 ## Requirements
 - Node.js v20.10.0
