@@ -26,6 +26,7 @@ app.get(`/weather`, async (req, res) => {
         getWeather(req.query.city),
         getForecast(req.query.city),
       ]);
+      console.log(weatherData )
       const mapImage = await getMap(weatherData.coord.lon, weatherData.coord.lat)
       if (weatherData) {
         res.render('weather', { weather: weatherData, map: mapImage, forecast: forecastData });

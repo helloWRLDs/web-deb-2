@@ -3,7 +3,7 @@
 ## Built with
 - [OpenWeatherMap.org](https://openweathermap.org/api) APi (Forecast and Weather Info)
 - [Geoapify.com](https://www.geoapify.com/static-maps-api) API (Static Maps)
-
+ 
 ## Installation
 ```bash
 npm install

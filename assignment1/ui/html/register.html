@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Register</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <form action="/register" method="post" class="register-form" id="register-form">
+                <div class="input-block">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" id="first_name" required>   
+                </div>
+                <div class="input-block">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" id="last_name" required>
+                </div>
+                <div class="input-block">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" required>
+                </div>
+                <div class="input-block">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="input-block">
+                    <!-- <input type="submit" value="Register" id="submitBtn"> -->
+                    <button type="button" id="submitBtn">Register</button>
+                    <span id="errMsg" class="block"></span>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/js/validation.js"></script>
+</body>
+</html>
