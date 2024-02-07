@@ -31,6 +31,10 @@ apiRouter.get('/blogs/:id', async(req, res, next) => {
 })
 
 apiRouter.post('/blogs', async(req, res, next) => {
+    if (req.get("Content-Length") > 300) {
+        res.status(400).json({"message": "Body is too large"})
+        return
+    }
     const newPost = {
         "_id": new Int32(await blogRepository.getPostIndex(req.app.get("db"))),
         "title": req.body.title,
@@ -67,13 +71,14 @@ apiRouter.delete('/blogs/:id', async(req, res, next) => {
 
 apiRouter.put('/blogs/:id', async(req, res, next) => {
     const id = new Int32(req.params.id)
-    const post = {
-        _id: id,
-        title: req.body.title,
-        body: req.body.body,
-        author: req.body.author,
-        created: req.body.created
-    }
+    const post = {}
+    try {
+        req.body.title ? (post.title = req.body.title) : null
+        req.body.body ? (post.body = req.body.body) : null
+        req.body.author ? (post.author = req.body.author) : null
+    } catch (error) {}
+    
+    console.log(post)
     blogRepository.updatePostById(req.app.get('db'), id, post, (result, err) => {
         if (err) {
             console.log(err)
