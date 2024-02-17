@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Send Email</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="mail-form">
+            <label for="email">Email <span id="sender-error"></span></label>
+            <input type="email" name="email" id="email">
+
+            
+            <label for="subject">Subject <span id="subject-error"></span></label>
+            <input type="subject" name="subject" id="subject">
+
+            
+            <label for="body">Body<span id="body-error"></span></label>
+            <!-- <input type="body" name="body" id="body"><span id="body-error"></span> -->
+            <textarea name="body" id="body" rows="10"></textarea>
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+    </div>
+    <script src="/js/index.js"></script>
+</body>
+</html>

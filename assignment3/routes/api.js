@@ -77,8 +77,6 @@ apiRouter.put('/blogs/:id', async(req, res, next) => {
         req.body.body ? (post.body = req.body.body) : null
         req.body.author ? (post.author = req.body.author) : null
     } catch (error) {}
-    
-    console.log(post)
     blogRepository.updatePostById(req.app.get('db'), id, post, (result, err) => {
         if (err) {
             console.log(err)
